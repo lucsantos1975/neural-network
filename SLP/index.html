@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rede Neural Perceptron</title>
+        <style> 
+            body { padding: 15px; margin: 0; font-size: 16pt; }
+            button { font-size: 16pt; padding: 10px; margin: 10px 10px 0 0; }
+            table td { border: 1px solid #B0B0B0; }
+            td { margin: 0; padding: 10px; }
+            .ltd { width: 275px; background: #E0E0E0; }
+            .rtd { width: 275px; text-align: right; background: #F1F1F1; }
+        </style>
+        <script src="p5/p5.min.js"></script>
+        <script src="Point.js"></script>
+        <script src="DataPoint.js"></script>
+        <script src="Perceptron.js"></script>
+        <script src="SLP.js"></script>
+    </head>
+    <body>
+        <div style="width: 100%; display: table;">
+            <div style="display: table-row">
+                <div id="canvasContainer" style="width: 800px; height: 800px; display: table-cell;"></div>
+                <div id="infoContainer" style="display: table-cell; vertical-align: top; padding-left: 20px;">
+                    <h2>Single Layer Perceptron</h2>
+                    
+                    <table>
+                        <tr>
+                            <td class="ltd">epoch</td>
+                            <td class="rtd"><span id="epoch"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="ltd">training data point index</td>
+                            <td class="rtd"><span id="trainingDataPointCurrentIndex"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="ltd">inputs[0]</td>
+                            <td class="rtd"><span id="inputs0"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="ltd">inputs[1]</td>
+                            <td class="rtd"><span id="inputs1"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="ltd">inputs[2]</td>
+                            <td class="rtd"><span id="inputs2"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="ltd">target</td>
+                            <td class="rtd"><span id="target"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="ltd">sum</td>
+                            <td class="rtd"><span id="sum"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="ltd">output</td>
+                            <td class="rtd"><span id="output"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="ltd">error</td>
+                            <td class="rtd"><span id="error"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="ltd">weights[0]</td>
+                            <td class="rtd"><span id="weights0"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="ltd">weights[1]</td>
+                            <td class="rtd"><span id="weights1"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="ltd">weights[2]</td>
+                            <td class="rtd"><span id="weights2"></span></td>
+                        </tr>
+                    </table>
+                    
+                    <button type="button" onclick="javascript:isTraining = true; trained = false; isTesting = false;">Train</button>
+                    <button type="button" onclick="javascript:isTraining = false; trained = true; isTesting = true;">Test</button>
+                    <button type="button" onclick="javascript:location.reload();">Reset</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
